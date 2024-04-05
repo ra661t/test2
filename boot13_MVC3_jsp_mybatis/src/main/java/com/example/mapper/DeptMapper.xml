@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DeptMapper">
+
+	<delete id="deleteByDeptno" 
+	parameterType="int">
+		delete from dept
+		where deptno = #{deptno}
+	</delete>
+	<delete id="deleteByDname" 
+	parameterType="string">
+	   delete from dept
+		where dname = #{dname}
+	</delete>
+    <insert id="insert" parameterType="Dept">
+      insert into dept ( deptno, dname, loc)
+      values ( #{deptno}, #{dname} , #{loc})
+    </insert>
+    <update id="update" parameterType="Dept">
+      update dept
+      set dname=#{dname}, loc=#{loc}
+      where deptno=#{deptno}
+    </update>
+
+	<!-- 단일행 반환 -->
+	<select id="selectByDeptno" parameterType="int" 
+	resultType="Dept">
+		select deptno, dname, loc
+		from dept
+		where deptno=#{deptno}
+	</select>
+	
+    <!-- 다중행 반환 -->
+	<select id="selectAll" resultType="Dept">
+	   select deptno, dname, loc
+	   from dept
+	   order by deptno asc
+	</select>
+	<select id="selectAll2" resultType="Dept">
+	   select deptno, dname, loc
+	   from dept
+	   order by deptno desc
+	</select>
+</mapper>
+
+
+
+
+
+
