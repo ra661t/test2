@@ -26,6 +26,8 @@ public class MainController {
 	public String main() {
 		System.out.println("///////////////////////");
 		System.out.println("/jenkins 업로드");
+		
+		System.out.println("master");
 		return "main"; //main.jsp 
 	}
 
