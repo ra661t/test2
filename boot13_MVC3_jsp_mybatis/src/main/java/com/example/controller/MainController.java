@@ -26,6 +26,7 @@ public class MainController {
 	public String main() {
 		System.out.println("///////////////////////");
 		System.out.println("/jenkins 업로드");
+		System.out.println("hotfix 병합");
 		return "main"; //main.jsp 
 	}
 
