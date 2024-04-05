@@ -42,6 +42,7 @@ public class MainController {
 	public String list(Model m) {
 		List<Dept> allData= service.list();
 		System.out.println(allData);		
+		System.out.println("/Data jenkins 업로드");
 		m.addAttribute("allData", allData);
 		return "list"; //list.jsp 
 	}
